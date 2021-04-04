@@ -1,6 +1,6 @@
 import { v4 as uuidV4 } from 'uuid';
 
-class Spacification {
+class Specification {
     id?: string;
     name: string;
     description: string;
@@ -13,4 +13,4 @@ class Spacification {
     }
 }
 
-export { Spacification };
+export { Specification };
