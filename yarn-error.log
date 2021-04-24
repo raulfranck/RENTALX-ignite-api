@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add csvparse
+  C:\Program Files\nodejs\node.exe C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add pg
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Raul\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;%NVM_HOME%;%NVM_SYMLINK%;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Raul\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\Raul\AppData\Local\Programs\Python\Python39;C:\Users\Raul\AppData\Local\Microsoft\WindowsApps;C:\Users\Raul\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Raul\AppData\Roaming\npm;C:\Users\Raul\AppData\Roaming\nvm;C:\Program Files\nodejs
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/csvparse: Not found
-      at Request.params.callback [as _callback] (C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
-      at Request.self.callback (C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
-      at Request.emit (events.js:223:5)
-      at Request.<anonymous> (C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
-      at Request.emit (events.js:223:5)
-      at IncomingMessage.<anonymous> (C:\Users\Raul\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
-      at Object.onceWrapper (events.js:312:28)
-      at IncomingMessage.emit (events.js:228:7)
-      at endReadableNT (_stream_readable.js:1185:12)
-      at processTicksAndRejections (internal/process/task_queues.js:81:21)
+  Error: EPERM: operation not permitted, unlink 'D:\personal-projects\Ignite\RENTALX\node_modules\.bin\ts-node-dev'
 
 npm manifest: 
   {
@@ -36,13 +26,18 @@ npm manifest:
       "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
     },
     "dependencies": {
+      "csv-parse": "^4.15.3",
       "express": "^4.17.1",
       "multer": "^1.4.2",
+      "reflect-metadata": "^0.1.13",
+      "swagger-ui-express": "^4.1.6",
+      "typeorm": "^0.2.32",
       "uuid": "^8.3.2"
     },
     "devDependencies": {
       "@types/express": "^4.17.11",
       "@types/multer": "^1.4.5",
+      "@types/swagger-ui-express": "^4.1.2",
       "@types/uuid": "^8.3.0",
       "@typescript-eslint/eslint-plugin": "^4.19.0",
       "@typescript-eslint/parser": "^4.19.0",
@@ -212,6 +207,14 @@ Lockfile:
     version "0.0.30"
     resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
     integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
+  
+  "@types/swagger-ui-express@^4.1.2":
+    version "4.1.2"
+    resolved "https://registry.yarnpkg.com/@types/swagger-ui-express/-/swagger-ui-express-4.1.2.tgz#cfc884904a104c3193f46f423d04ee0416be1ef4"
+    integrity sha512-t9teFTU8dKe69rX9EwL6OM2hbVquYdFM+sQ0REny4RalPlxAm+zyP04B12j4c7qEuDS6CnlwICywqWStPA3v4g==
+    dependencies:
+      "@types/express" "*"
+      "@types/serve-static" "*"
   
   "@types/uuid@^8.3.0":
     version "8.3.0"
@@ -621,6 +624,11 @@ Lockfile:
       path-key "^3.1.0"
       shebang-command "^2.0.0"
       which "^2.0.1"
+  
+  csv-parse@^4.15.3:
+    version "4.15.3"
+    resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.15.3.tgz#8a62759617a920c328cb31c351b05053b8f92b10"
+    integrity sha512-jlTqDvLdHnYMSr08ynNfk4IAUSJgJjTKy2U5CQBSu4cN9vQOJonLVZP4Qo4gKKrIgIQ5dr07UwOJdi+lRqT12w==
   
   currently-unhandled@^0.4.1:
     version "0.4.1"
@@ -2301,6 +2309,18 @@ Lockfile:
     integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
     dependencies:
       has-flag "^4.0.0"
+  
+  swagger-ui-dist@^3.18.1:
+    version "3.46.0"
+    resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-3.46.0.tgz#f08d2c9b4a2dce922ba363c598e4795b5ccf0b80"
+    integrity sha512-ueaZ45OHhHvGKmocvCkxFY8VCfbP5PgcxutoQxy9j8/VZeDoLDvg8FBf4SO6NxHhieNAdYPUd0O6G9FjJO2fqw==
+  
+  swagger-ui-express@^4.1.6:
+    version "4.1.6"
+    resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.1.6.tgz#682294af3d5c70f74a1fa4d6a9b503a9ee55ea82"
+    integrity sha512-Xs2BGGudvDBtL7RXcYtNvHsFtP1DBFPMJFRxHe5ez/VG/rzVOEjazJOOSc/kSCyxreCTKfJrII6MJlL9a6t8vw==
+    dependencies:
+      swagger-ui-dist "^3.18.1"
   
   table@^6.0.4:
     version "6.0.8"
