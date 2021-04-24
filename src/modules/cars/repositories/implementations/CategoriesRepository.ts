@@ -16,7 +16,7 @@ class CategoriesRepository implements ICategoriesRepository{
         return CategoriesRepository.INSTANCE;
     }
 
-    create({ description, name} : ICreateCategoryDTO): void {
+    create({ description, name } : ICreateCategoryDTO): void {
         const category = new Category();
     
         Object.assign(category, {
